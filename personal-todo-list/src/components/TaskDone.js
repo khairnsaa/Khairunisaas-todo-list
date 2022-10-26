@@ -1,7 +1,7 @@
-import { faCheck, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {  faTimes, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const TaskLists = ({taskName, context, id, deleteTask, doneTask}) => {
+const TaskDone = ({taskName, context, id, deleteTaskDone, workingTask}) => {
     return (
         <li id={id}>
             <div className="name-deadline">
@@ -9,15 +9,15 @@ const TaskLists = ({taskName, context, id, deleteTask, doneTask}) => {
                 <p>{context}</p>
             </div>
             <div className="task-cta">
-                <button onClick={deleteTask}>
+                <button onClick={deleteTaskDone}>
                     <FontAwesomeIcon icon={faTrash} />
                 </button>
-                <button onClick={doneTask}>
-                    <FontAwesomeIcon icon={faCheck} />
+                <button onClick={workingTask}>
+                    <FontAwesomeIcon icon={faTimes} />
                 </button>
             </div>
         </li>
     );
 }
  
-export default TaskLists;
+export default TaskDone;

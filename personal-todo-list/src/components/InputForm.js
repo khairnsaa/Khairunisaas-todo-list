@@ -9,11 +9,12 @@ const InputForm = ({taskName, setTaskName, taskId, addTask}) => {
     }
 
     return (
-        <section className="from-container">
-            {/* <input type="date" name="" id="" /> */}
-            <input type="text" name="taskName" className="input-task" value={taskName.taskName} onChange={handleChange} />
-            <input type="date" name="deadline" className="input-task" value={taskName.deadline} onChange={handleChange} />
-            <button onClick={addTask}>Add</button>
+        <section className="form-container">
+            <div className="input">
+                <input type="text" name="taskName"required className="input-task" value={taskName.taskName} onChange={handleChange} placeholder="Title..." />
+                <input type="text" name="context" required className="deadline-task" value={taskName.context} onChange={handleChange} placeholder="Context..."/>
+            </div>
+            <button className="add-btn" onClick={addTask}>Add</button>
         </section>
     );
 }
